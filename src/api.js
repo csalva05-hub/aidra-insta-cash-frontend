@@ -1,9 +1,7 @@
-// src/api.js
-import axios from "axios";
-import CONFIG from "./config";
+import axios from 'axios';
 
 const api = axios.create({
-  baseURL: CONFIG.API_BASE_URL,
+  baseURL: 'https://aidra-insta-cash-backend.onrender.com/api', // ✅ includes /api
 });
 
 export default api;
