@@ -1,6 +1,6 @@
-// src/config.js
-const CONFIG = {
-  API_BASE_URL: import.meta.env.VITE_API_BASE_URL || "https://aidra-insta-cash-backend.onrender.com",
-};
+const api = axios.create({
+  baseURL: 'https://aidra-insta-cash-backend.vercel.app/api', // ✅ NEW (example)
+});
+
 
 export default CONFIG;
