@@ -1,7 +1,3 @@
-import axios from 'axios';
-
 const api = axios.create({
-  baseURL: 'https://aidra-insta-cash-backend.onrender.com/api', // ✅ includes /api
+  baseURL: 'https://aidra-insta-cash-backend.vercel.app/api', // ✅ New Vercel backend
 });
-
-export default api;
