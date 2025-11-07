@@ -1,20 +1,25 @@
 // src/config.js
 
-const CONFIG = {
-  // ✅ Base URL of your deployed backend (Vercel backend)
-  API_BASE_URL: 'https://aidra-insta-cash-backend.vercel.app/api',
+// Detect whether we're in development (localhost) or production (Vercel)
+const isLocalhost =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+   window.location.hostname === '127.0.0.1');
 
-  // ✅ App name for headers and branding
+// ✅ Set backend API base URL dynamically
+const CONFIG = {
+  API_BASE_URL: isLocalhost
+    ? 'http://localhost:5000/api' // local backend (for local dev)
+    : 'https://aidra-insta-cash-backend.vercel.app/api', // deployed backend
+
   APP_NAME: 'Aidra InstaCash',
 
-  // ✅ Default settings (can be modified from the dashboard later)
   DEFAULTS: {
-    INTEREST_RATE: 0.20, // 20%
-    LOAN_DURATION_DAYS: 66,
+    INTEREST_RATE: 0.20,       // 20%
+    LOAN_DURATION_DAYS: 66,    // 66 days
     PROCESSING_FEE_RATE: 0.02, // 2%
   },
 
-  // ✅ Supported roles (more can be added dynamically)
   ROLES: ['super_admin', 'admin', 'loan_officer'],
 };
 
